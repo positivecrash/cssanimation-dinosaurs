@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Animation | robonomics.network</title>
+    <link href="assets/css/robonomics.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="animation-scene">
+      <div id="animation-scene--content">
+        <div class="animation-dino--red">
+          <div class="sprite-basic-dino-red-body"></div>
+          <div class="sprite-basic-dino-red-fire"></div>
+          <div class="sprite-basic-dino-red-hand left"></div>
+          <div class="sprite-basic-dino-red-hand right"></div>
+        </div>
+        <div class="animation-scales green">
+          <div class="sprite-basic-scales-part1"></div>
+          <div class="sprite-basic-scales-part2"></div>
+          <div class="animation-scales--move">
+            <div class="animation-scales--red">
+              <div class="sprite-basic-scales-red-top"></div>
+              <div class="sprite-basic-scales-red-action"></div>
+              <div class="sprite-basic-scales-red-bottom"></div>
+            </div>
+            <div class="animation-scales--green">
+              <div class="sprite-basic-scales-green-top"></div>
+              <div class="sprite-basic-scales-green-action"></div>
+              <div class="sprite-basic-scales-green-bottom"></div>
+            </div>
+            <div class="sprite-basic-scales-part3"></div>
+          </div>
+        </div>
+        <div class="animation-dino--green">
+          <div class="sprite-basic-dino-green-body"></div>
+          <div class="sprite-basic-dino-green-brows"></div>
+          <div class="sprite-basic-dino-green-leaf"></div>
+          <div class="sprite-basic-dino-green-hand"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function animationScale(){
+      	var $wrap = document.querySelector('#animation-scene');
+      	var $content = document.querySelector('#animation-scene--content');
+      
+      	var ratio = ($wrap.offsetWidth / $content.offsetWidth).toFixed(2);
+      
+      	$content.style.transform = 'scale(' + ratio +')';
+      }
+      
+      window.addEventListener('load', animationScale, false);
+      window.addEventListener('resize', animationScale, false);
+    </script>
+  </body>
+</html>

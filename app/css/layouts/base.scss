@@ -1,0 +1,373 @@
+$scales-part1: map-get($icons, 'scales-part1');
+$w-part1: map-get($scales-part1, width);
+$h-part1: map-get($scales-part1, height);
+
+$scales-part2: map-get($icons, 'scales-part2');
+$w-part2: map-get($scales-part2, width);
+$h-part2: map-get($scales-part2, height);
+
+$scales-part3: map-get($icons, 'scales-part3');
+$w-part3: map-get($scales-part3, width);
+$h-part3: map-get($scales-part3, height);
+
+$scales-red: map-get($icons, 'scales-red');
+$w-red: map-get($scales-red, width);
+$h-red: map-get($scales-red, height);
+
+$scales-red-top: map-get($icons, 'scales-red-top');
+$w-red-top: map-get($scales-red-top, width);
+$h-red-top: map-get($scales-red-top, height);
+
+$scales-red-action: map-get($icons, 'scales-red-action');
+$w-red-action: map-get($scales-red-action, width);
+$h-red-action: map-get($scales-red-action, height);
+
+$scales-red-bottom: map-get($icons, 'scales-red-bottom');
+$w-red-bottom: map-get($scales-red-bottom, width);
+$h-red-bottom: map-get($scales-red-bottom, height);
+
+$scales-green: map-get($icons, 'scales-green');
+$w-green: map-get($scales-green, width);
+$h-green: map-get($scales-green, height);
+
+$scales-green-top: map-get($icons, 'scales-green-top');
+$w-green-top: map-get($scales-green-top, width);
+$h-green-top: map-get($scales-green-top, height);
+
+$scales-green-action: map-get($icons, 'scales-green-action');
+$w-green-action: map-get($scales-green-action, width);
+$h-green-action: map-get($scales-green-action, height);
+
+$scales-green-bottom: map-get($icons, 'scales-green-bottom');
+$w-green-bottom: map-get($scales-green-bottom, width);
+$h-green-bottom: map-get($scales-green-bottom, height);
+
+$dino-red: map-get($icons, 'dino-red');
+$w-dino-red: map-get($dino-red, width);
+$h-dino-red: map-get($dino-red, height);
+
+$dino-green: map-get($icons, 'dino-green');
+$w-dino-green: map-get($dino-green, width);
+$h-dino-green: map-get($dino-green, height);
+
+
+$delay: 0.4s;
+$delay-scale: $delay;
+$delay-dino: $delay + 0.8s;
+
+
+// $animation-timing: cubic-bezier(0.96, 0.44, 0.78, 1.06);
+$animation-timing-scales: cubic-bezier(0.8, 0.28, 0.7, 1.000);
+
+
+
+
+/* SCENE */
+#animation-scene--content
+  {
+    display: inline-block;
+    white-space: nowrap;
+    transform-origin: 0 0;
+  }
+.animation-dino--red, .animation-dino--green, .animation-scales
+  {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+
+/* PARTS */
+.animation-scales
+  {
+    position: relative;
+    width: $w-part3;
+    height: $h-part1 + $h-part2/2 + $h-green;
+    margin-left: $w-red/2 + 30;
+    margin-right: $w-green/2 + 30;
+
+    @extend %FadedOut;
+    animation: 0.2s FadeIn $delay-scale ease-in forwards;
+  }
+
+.sprite-basic-scales-part1
+  {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    left: calc(50% - #{$w-part1}/2);
+
+    z-index: 1;
+  }
+
+.sprite-basic-scales-part2
+  {
+    position: absolute;
+    top: $h-part1;
+    left: 50%;
+    left: calc(50% - #{$w-part2}/2);
+
+    z-index: 1;
+  }
+
+
+.animation-scales--move
+  {
+    position: absolute;
+
+    width: $w-part3;
+    height: $h-part3;
+
+    top: $h-part1 + $h-part2/2 - $h-part3/2;
+    left: 50%;
+    left: calc(50% - #{$w-part3}/2);
+
+    z-index: 0;
+
+    transform-origin: 50% 50%;
+  }
+
+
+.sprite-basic-scales-part3
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+.animation-scales--red
+  {
+    position: absolute;
+    top: -$h-part3;
+
+    left: -$w-red/2 + 1;
+
+    width: $w-red;
+    height: $h-red;
+
+    z-index: 2;
+  }
+
+.sprite-basic-scales-red-top
+  {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    left: calc(50% - #{$w-red-top}/2);
+
+    z-index: 1;
+  }
+
+.sprite-basic-scales-red-action
+  {
+    position: absolute;
+    top: $h-red-top - $h-red-action;
+    left: 50%;
+    left: calc(50% - #{$w-red-action}/2);
+
+    z-index: 0;
+    transform-origin: 50% 100%;
+  }
+
+.sprite-basic-scales-red-bottom
+  {
+    position: absolute;
+    top: $h-red-top - 1;
+    left: 50%;
+    left: calc(50% - #{$w-red-bottom}/2);
+
+    z-index: 0;
+  }
+
+
+  .animation-scales--green
+  {
+    position: absolute;
+    top: -$h-part3;
+
+    right: -$w-green/2 + 1;
+
+    width: $w-green;
+    height: $h-green;
+
+    z-index: 2;
+  }
+
+  .sprite-basic-scales-green-top
+  {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    left: calc(50% - #{$w-green-top}/2);
+
+    z-index: 1;
+  }
+
+  .sprite-basic-scales-green-action
+    {
+      position: absolute;
+      top: $h-green-top - $h-green-action;
+      left: 50%;
+      left: calc(50% - #{$w-green-action}/2);
+
+      z-index: 0;
+      transform-origin: 50% 100%;
+    }
+
+  .sprite-basic-scales-green-bottom
+    {
+      position: absolute;
+      top: $h-green-top - 1;
+      left: 50%;
+      left: calc(50% - #{$w-green-bottom}/2);
+
+      z-index: 0;
+    }
+
+
+
+.animation-dino--red
+  {
+    position: relative;
+    width: $w-dino-red;
+    height: $h-dino-red;
+
+    @extend %FadedOut;
+    animation: 0.2s FadeIn $delay-dino ease-in forwards;
+  }
+
+.sprite-basic-dino-red-body
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+.sprite-basic-dino-red-fire
+  {
+    position: absolute;
+    top: 67px;
+    right: 0;
+
+    opacity: 0;
+    animation: 2.5s Glitch $delay-dino ease-out infinite;
+  }
+
+.sprite-basic-dino-red-hand.left
+  {
+    position: absolute;
+    top: 132px;
+    left: 75px;
+
+    transform-origin: 0 0;
+    animation: 2.5s Shake1 $delay-dino ease-out infinite;
+  }
+
+.sprite-basic-dino-red-hand.right
+  {
+    position: absolute;
+    top: 129px;
+    left: 102px;
+
+    transform: rotate(20deg);
+    transform-origin: 0 0;
+    animation: 2.5s Shake2 $delay-dino ease-out infinite;
+  }
+
+
+
+.animation-dino--green
+  {
+    position: relative;
+    width: $w-dino-green;
+    height: $h-dino-green;
+
+    @extend %FadedOut;
+    animation: 0.2s FadeIn $delay-dino ease-in forwards;
+  }
+
+.sprite-basic-dino-green-body
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+.sprite-basic-dino-green-brows
+  {
+    position: absolute;
+    top: 34px;
+    left: 18px;
+
+    animation: 2.5s Brows $delay-dino ease-out infinite;
+  }
+
+.sprite-basic-dino-green-leaf
+  {
+    position: absolute;
+    top: 117px;
+    left: 4px;
+
+    transform-origin: 100% 100%;
+
+    animation: 2.5s Leaf $delay-dino ease-out infinite;
+  }
+
+.sprite-basic-dino-green-hand
+  {
+    position: absolute;
+    top: 148px;
+    left: 28px;
+  }
+
+
+.animation-scales.red
+  {
+    .animation-scales--move
+      {
+        animation: 2.5s SwingLeft $delay-scale #{$animation-timing-scales} forwards;
+      }
+
+    .animation-scales--green, .animation-scales--red
+      {
+        animation: 2.5s SwingRight $delay-scale #{$animation-timing-scales} forwards;
+      }
+
+    .sprite-basic-scales-red-action
+      {
+        animation: SwingScaleIn 2.5s $delay-scale linear forwards;
+        // animation: SwingScaleIn 2.5s $delay-scale linear forwards, Glitch2 1.2s $delay-scale ease-out infinite;
+      }
+
+    .sprite-basic-scales-green-action
+      {
+        transform: scale(0.8);
+        animation: 2.5s SwingScaleOut $delay-scale linear forwards;
+      }
+  }
+
+
+.animation-scales.green
+  {
+    .animation-scales--move
+      {
+        animation: 2.5s SwingRight $delay-scale #{$animation-timing-scales} forwards;
+      }
+
+    .animation-scales--green, .animation-scales--red
+      {
+        animation: 2.5s SwingLeft $delay-scale #{$animation-timing-scales} forwards;
+      }
+
+    .sprite-basic-scales-green-action
+      {
+        animation: 2.5s SwingScaleIn $delay-scale linear forwards;
+      }
+
+    .sprite-basic-scales-red-action
+      {
+        transform: scale(0.8);
+        animation: 2.5s SwingScaleOut $delay-scale linear forwards;
+        // animation: 2.5s SwingScaleOut $delay-scale linear forwards, Glitch2 0.8s $delay-scale ease-out infinite;
+      }
+  }
+

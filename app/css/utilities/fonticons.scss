@@ -1,0 +1,50 @@
+/* Icons */
+@font-face {
+	font-family: 'iconfont';
+	src:url('../fonts/iconfont.eot');
+	src:url('../fonts/iconfont.eot') format('embedded-opentype'),
+		url('../fonts/iconfont.ttf') format('truetype'),
+		url('../fonts/iconfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+%iconsfont{
+	font-family: 'iconfont' !important;
+	speak: none;
+	font-size: 100%;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icon($content){
+	@extend %iconsfont;
+	&:before { content: $content; display: block; line-height: 1; }
+}
+
+.i-arrow-left, .i-arrow-right { @include icon('\EA01'); }
+.i-arrow-right:before { transform: rotate(180deg); }
+
+.i-copy { @include icon('\EA02'); }
+.i-cursor { @include icon('\EA03'); }
+.i-github { @include icon('\EA04'); }
+.i-reddit { @include icon('\EA05'); }
+.i-lighthouse { @include icon('\EA06'); }
+.i-piechart { @include icon('\EA07'); }
+.i-transfer { @include icon('\EA08'); }
+.i-day { @include icon('\EA09'); }
+.i-night { @include icon('\EA010'); }
+.i-menu { @include icon('\EA011'); }
+.i-app { @include icon('\EA012'); }
+.i-arrowhead { @include icon('\EA013'); }
+.i-check { @include icon('\EA014'); }
+.i-stop { @include icon('\EA015'); }
+.i-file { @include icon('\EA016'); }
+.i-user { @include icon('\EA017'); }
+.i-alert { @include icon('\EA018'); }
+.i-info { @include icon('\EA019'); }

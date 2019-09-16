@@ -1,0 +1,48 @@
+extends extends/layout.pug
+
+block html
+	- var meta_title = 'Animation'
+
+block content
+	#animation-scene
+		#animation-scene--content
+			.animation-dino--red
+				.sprite-basic-dino-red-body
+				.sprite-basic-dino-red-fire
+				.sprite-basic-dino-red-hand.left
+				.sprite-basic-dino-red-hand.right
+
+			.animation-scales.green
+				.sprite-basic-scales-part1
+				.sprite-basic-scales-part2
+				.animation-scales--move
+					.animation-scales--red
+						.sprite-basic-scales-red-top
+						.sprite-basic-scales-red-action
+						.sprite-basic-scales-red-bottom
+					.animation-scales--green
+						.sprite-basic-scales-green-top
+						.sprite-basic-scales-green-action
+						.sprite-basic-scales-green-bottom
+					.sprite-basic-scales-part3
+
+
+			.animation-dino--green
+				.sprite-basic-dino-green-body
+				.sprite-basic-dino-green-brows
+				.sprite-basic-dino-green-leaf
+				.sprite-basic-dino-green-hand
+
+
+	script.
+		function animationScale(){
+			var $wrap = document.querySelector('#animation-scene');
+			var $content = document.querySelector('#animation-scene--content');
+
+			var ratio = ($wrap.offsetWidth / $content.offsetWidth).toFixed(2);
+
+			$content.style.transform = 'scale(' + ratio +')';
+		}
+
+		window.addEventListener('load', animationScale, false);
+		window.addEventListener('resize', animationScale, false);

@@ -1,0 +1,122 @@
+$icons: (
+    sprite: (width: 1912px, height: 225.1px, pngPath: '../i/sprite.png?6', svgPath: '../i/sprite.svg?6'),
+    dino-green: (width: 163.3px, height: 225.1px, backgroundX: 0px, backgroundY: 0px),
+    dino-green-body: (width: 163.3px, height: 225.1px, backgroundX: -164px, backgroundY: 0px),
+    dino-green-brows: (width: 26.3px, height: 28.2px, backgroundX: -328px, backgroundY: 0px),
+    dino-green-hand: (width: 36.3px, height: 16.7px, backgroundX: -355px, backgroundY: 0px),
+    dino-green-leaf: (width: 37.7px, height: 40.8px, backgroundX: -392px, backgroundY: 0px),
+    dino-red: (width: 245px, height: 225px, backgroundX: -430px, backgroundY: 0px),
+    dino-red-body: (width: 183.5px, height: 225px, backgroundX: -675px, backgroundY: 0px),
+    dino-red-fire: (width: 102.3px, height: 46.7px, backgroundX: -859px, backgroundY: 0px),
+    dino-red-hand: (width: 22.6px, height: 16.4px, backgroundX: -962px, backgroundY: 0px),
+    scales-green: (width: 97.6px, height: 144.1px, backgroundX: -985px, backgroundY: 0px),
+    scales-green-action: (width: 49.7px, height: 58px, backgroundX: -1083px, backgroundY: 0px),
+    scales-green-bottom: (width: 93.9px, height: 28.8px, backgroundX: -1133px, backgroundY: 0px),
+    scales-green-top: (width: 97.6px, height: 116.8px, backgroundX: -1227px, backgroundY: 0px),
+    scales-part1: (width: 17.6px, height: 45.4px, backgroundX: -1325px, backgroundY: 0px),
+    scales-part2: (width: 26.9px, height: 26.9px, backgroundX: -1343px, backgroundY: 0px),
+    scales-part3: (width: 220.6px, height: 3px, backgroundX: -1370px, backgroundY: 0px),
+    scales-red: (width: 97.6px, height: 144.1px, backgroundX: -1591px, backgroundY: 0px),
+    scales-red-action: (width: 30.1px, height: 56.3px, backgroundX: -1689px, backgroundY: 0px),
+    scales-red-bottom: (width: 93.9px, height: 28.8px, backgroundX: -1720px, backgroundY: 0px),
+    scales-red-top: (width: 97.6px, height: 116.8px, backgroundX: -1814px, backgroundY: 0px),
+);
+
+$sprite: map-get($icons, sprite);
+
+%back_svg{ background-image: url(map-get($sprite, svgPath)); }
+%back_png{ background-image: url(map-get($sprite, pngPath)); }
+
+@mixin get-sprite($spritename){
+    $spritename: map-get($icons, $spritename);
+    
+    width: map-get($spritename, width);
+    height: map-get($spritename, height);
+    background-position: map-get($spritename, backgroundX) map-get($spritename, backgroundY);
+
+    @extend %back_svg;
+
+    // @extend %back_png;
+    // .svg & { @extend %back_svg; }
+}
+
+.sprite-basic-dino-green{
+  @include get-sprite('dino-green');
+  display: inline-block;
+}
+.sprite-basic-dino-green-body{
+  @include get-sprite('dino-green-body');
+  display: inline-block;
+}
+.sprite-basic-dino-green-brows{
+  @include get-sprite('dino-green-brows');
+  display: inline-block;
+}
+.sprite-basic-dino-green-hand{
+  @include get-sprite('dino-green-hand');
+  display: inline-block;
+}
+.sprite-basic-dino-green-leaf{
+  @include get-sprite('dino-green-leaf');
+  display: inline-block;
+}
+.sprite-basic-dino-red{
+  @include get-sprite('dino-red');
+  display: inline-block;
+}
+.sprite-basic-dino-red-body{
+  @include get-sprite('dino-red-body');
+  display: inline-block;
+}
+.sprite-basic-dino-red-fire{
+  @include get-sprite('dino-red-fire');
+  display: inline-block;
+}
+.sprite-basic-dino-red-hand{
+  @include get-sprite('dino-red-hand');
+  display: inline-block;
+}
+.sprite-basic-scales-green{
+  @include get-sprite('scales-green');
+  display: inline-block;
+}
+.sprite-basic-scales-green-action{
+  @include get-sprite('scales-green-action');
+  display: inline-block;
+}
+.sprite-basic-scales-green-bottom{
+  @include get-sprite('scales-green-bottom');
+  display: inline-block;
+}
+.sprite-basic-scales-green-top{
+  @include get-sprite('scales-green-top');
+  display: inline-block;
+}
+.sprite-basic-scales-part1{
+  @include get-sprite('scales-part1');
+  display: inline-block;
+}
+.sprite-basic-scales-part2{
+  @include get-sprite('scales-part2');
+  display: inline-block;
+}
+.sprite-basic-scales-part3{
+  @include get-sprite('scales-part3');
+  display: inline-block;
+}
+.sprite-basic-scales-red{
+  @include get-sprite('scales-red');
+  display: inline-block;
+}
+.sprite-basic-scales-red-action{
+  @include get-sprite('scales-red-action');
+  display: inline-block;
+}
+.sprite-basic-scales-red-bottom{
+  @include get-sprite('scales-red-bottom');
+  display: inline-block;
+}
+.sprite-basic-scales-red-top{
+  @include get-sprite('scales-red-top');
+  display: inline-block;
+}

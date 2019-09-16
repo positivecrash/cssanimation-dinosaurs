@@ -1,0 +1,36 @@
+.loading-logo {
+  position: relative;
+  @extend %d-inlineblock;
+  padding-top: $font-size-base;
+
+  &:after{
+    content:"DAPP";
+
+    position: absolute;
+    right: - 80px;
+    top: 0;
+
+    font-size: 30px;
+    @extend %text_uppercase;
+  }
+}
+
+.loader-ring
+ {
+   position: relative;
+   display: inline-block;
+   height: $font-size-base;
+   width: $font-size-base;
+   border-radius: $font-size-base;
+   border-width: 2px 2px 0 0;
+   border-style: solid;
+
+   animation: 0.8s Rotate ease-in-out infinite;
+ }
+
+
+ .loading-container
+  {
+    margin-top: 150px;
+    text-align: center;
+  }
