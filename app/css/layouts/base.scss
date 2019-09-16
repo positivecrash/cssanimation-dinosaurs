@@ -55,6 +55,8 @@ $delay: 0.4s;
 $delay-scale: $delay;
 $delay-dino: $delay + 0.8s;
 
+$duration-scale: 6s;
+
 
 // $animation-timing: cubic-bezier(0.96, 0.44, 0.78, 1.06);
 $animation-timing-scales: cubic-bezier(0.8, 0.28, 0.7, 1.000);
@@ -324,24 +326,24 @@ $animation-timing-scales: cubic-bezier(0.8, 0.28, 0.7, 1.000);
   {
     .animation-scales--move
       {
-        animation: 2.5s SwingLeft $delay-scale #{$animation-timing-scales} forwards;
+        animation: $duration-scale SwingLeft $delay-scale #{$animation-timing-scales} forwards;
       }
 
     .animation-scales--green, .animation-scales--red
       {
-        animation: 2.5s SwingRight $delay-scale #{$animation-timing-scales} forwards;
+        animation: $duration-scale SwingRight $delay-scale #{$animation-timing-scales} forwards;
       }
 
     .sprite-basic-scales-red-action
       {
-        animation: SwingScaleIn 2.5s $delay-scale linear forwards;
+        animation: SwingScaleIn $duration-scale $delay-scale linear forwards;
         // animation: SwingScaleIn 2.5s $delay-scale linear forwards, Glitch2 1.2s $delay-scale ease-out infinite;
       }
 
     .sprite-basic-scales-green-action
       {
         transform: scale(0.8);
-        animation: 2.5s SwingScaleOut $delay-scale linear forwards;
+        animation: $duration-scale SwingScaleOut $delay-scale linear forwards;
       }
   }
 
@@ -350,23 +352,23 @@ $animation-timing-scales: cubic-bezier(0.8, 0.28, 0.7, 1.000);
   {
     .animation-scales--move
       {
-        animation: 2.5s SwingRight $delay-scale #{$animation-timing-scales} forwards;
+        animation: $duration-scale SwingRight $delay-scale #{$animation-timing-scales} forwards;
       }
 
     .animation-scales--green, .animation-scales--red
       {
-        animation: 2.5s SwingLeft $delay-scale #{$animation-timing-scales} forwards;
+        animation: $duration-scale SwingLeft $delay-scale #{$animation-timing-scales} forwards;
       }
 
     .sprite-basic-scales-green-action
       {
-        animation: 2.5s SwingScaleIn $delay-scale linear forwards;
+        animation: $duration-scale SwingScaleIn $delay-scale linear forwards;
       }
 
     .sprite-basic-scales-red-action
       {
         transform: scale(0.8);
-        animation: 2.5s SwingScaleOut $delay-scale linear forwards;
+        animation: $duration-scale SwingScaleOut $delay-scale linear forwards;
         // animation: 2.5s SwingScaleOut $delay-scale linear forwards, Glitch2 0.8s $delay-scale ease-out infinite;
       }
   }
